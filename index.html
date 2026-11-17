@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nuestra Boda · Javier y Lorena</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="toast" class="toast">¡Datos copiados! 📋✨</div>
+
+    <!-- MÚSICA INTERACTIVA -->
+    <audio id="musicaInvitacion" preload="auto" loop>
+        <source src="img/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="music-toggle" class="music-btn" onclick="toggleMusic()">
+        <i class="fa-solid fa-music"></i>
+    </div>
+    
+    <!-- INTRO CINEMATOGRÁFICA -->
+    <div id="contenedor-principal" onclick="activarInvitacion()">
+        <video id="videoSobre" playsinline muted preload="auto">
+            <source src="img/1.mp4" type="video/mp4">
+        </video>
+        <img src="img/sobre.png" alt="Sobre Boda" id="imgSobreEstetica">
+        
+        <div id="capa-boton">
+            <div class="boton-elegante-inicio" id="btn-toca-abrir">
+                <i class="fa-solid fa-envelope-open-text"></i> Tocar para abrir
+            </div>
+        </div>
+    </div>
+
+    <!-- INVITACIÓN WEB BODA -->
+    <div id="seccion-final" class="oculto">
+
+        <!-- PORTADA LIMPIA -->
+        <header class="hero-section">
+            <img src="img/portada.png" alt="Javier y Lorena" id="imgPortada">
+        </header>
+
+        <div class="bloque-contenido-general">
+            
+            <!-- MENSAJE DE INVITACIÓN Y PADRES -->
+            <section class="section-pad reveal text-center">
+                
+                <p class="wedding-message-text italic-text mt-10">
+                    Con gran alegría, tenemos el honor de invitarte a la celebración de nuestra boda. Será un placer contar con tu presencia en este día tan especial, lleno de amor y felicidad.
+                </p>
+                <div class="separator-line mt-20 mb-20"></div>
+
+                <h3 class="subtitle-serif">JUNTO A NUESTROS<br>PADRES</h3>
+
+                <div class="parents-container mt-25">
+                    <div class="parent-block">
+                        <p class="padres-label">PADRES DE LA NOVIA</p>
+                        <p class="padres-nombres">José Gill Calderón & Antonia Alfonso</p>
+                    </div>
+                    <div class="parent-block">
+                        <p class="padres-label">PADRES DEL NOVIO</p>
+                        <p class="padres-nombres">Pánfilo Ayala & Estela González</p>
+                    </div>
+                </div>
+
+                <div class="separator-line mt-25 mb-20"></div>
+                <p class="wedding-message-text italic-text">
+                    Nos encantaría compartir este momento tan especial con vos.
+                </p>
+                <div class="dashed-line mt-20 mb-20"></div>
+
+                <h1 class="names-script-main">Javier &<br>Lorena</h1>
+                
+            </section>
+
+            <!-- SAVE THE DATE (VOLTEO AL TOCAR) -->
+            <section class="section-pad reveal text-center section-bg-cream">
+                <h2 class="title-serif-large">SAVE THE DATE</h2>
+                <p class="wedding-message-text italic-text mt-10">Toca los 3 círculos botánicos para revelar la fecha:</p>
+                
+                <div class="tap-circles-wrapper mt-25">
+                    <div class="circle-tap-card" onclick="revelarFecha(this)">
+                        <div class="circle-front">TOCA</div>
+                        <div class="circle-back">27</div>
+                    </div>
+                    <div class="circle-tap-card" onclick="revelarFecha(this)">
+                        <div class="circle-front">TOCA</div>
+                        <div class="circle-back">12</div>
+                    </div>
+                    <div class="circle-tap-card" onclick="revelarFecha(this)">
+                        <div class="circle-front">TOCA</div>
+                        <div class="circle-back">26</div>
+                    </div>
+                </div>
+
+                <div id="fecha-revelada" class="std-revealed-info">
+                    <div class="countdown-container mt-30">
+                        <div class="time-box"><span id="dias">00</span><small>DÍAS</small></div>
+                        <div class="time-box"><span id="horas">00</span><small>HS</small></div>
+                        <div class="time-box"><span id="minutos">00</span><small>MIN</small></div>
+                        <div class="time-box"><span id="segundos">00</span><small>SEG</small></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GALERÍA "NUESTRA HISTORIA" -->
+            <section class="section-pad reveal text-center">
+                <h2 class="title-serif-large">NUESTRA HISTORIA</h2>
+                
+                <div class="carousel-container mt-20">
+                    <div class="carousel-track">
+                        <img src="img/foto1.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto2.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto3.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto4.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto5.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto6.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto7.png" alt="Nosotros" class="carousel-img">
+                        <img src="img/foto8.png" alt="Nosotros" class="carousel-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- UBICACIONES -->
+            <section class="section-pad reveal text-center section-bg-cream">
+                <h2 class="title-serif-large">UBICACIONES</h2>
+
+                <!-- IGLESIA -->
+                <div class="location-main-card mt-20">
+                    <div class="location-icon-circle"><i class="fa-solid fa-church"></i></div>
+                    <h3 class="location-title mt-15">Ceremonia Religiosa</h3>
+                    <p class="location-place mt-5">Parroquia San Miguel Arcángel</p>
+                    <p class="location-time-small mt-5">09:00 Hs</p>
+                    
+                    <a href="https://www.google.com/maps/place/Parroquia+San+Miguel+Arcangel,+Saltos+del+Guair%C3%A1+140105/@-24.0687373,-54.3095809,15z/data=!4m6!3m5!1s0x94f4b103c40034ff:0xce58c55300896c36!8m2!3d-24.0687373!4d-54.3095809!16s%2Fg%2F11c0vxp0h3?hl=es&g_ep=Eg1tbF8yMDI2MTExMF8wIOC7DCoASAJQAg%3D%3D" target="_blank" class="btn-block-green mt-20">
+                        <i class="fa-solid fa-map-location-dot"></i> VER IGLESIA EN MAPA
+                    </a>
+                </div>
+
+                <!-- RECEPCIÓN -->
+                <div class="location-main-card mt-25">
+                    <div class="location-icon-circle"><i class="fa-solid fa-glass-cheers"></i></div>
+                    <h3 class="location-title mt-15">Recepción</h3>
+                    <p class="location-place mt-5">Kabaña Venamore - La Paloma</p>
+                    <p class="location-time-small mt-5">11:00 Hs</p>
+                    
+                    <a href="https://maps.app.goo.gl/61EXsShsaL7Ea7Fu9?g_st=ic" target="_blank" class="btn-block-green mt-20">
+                        <i class="fa-solid fa-map-location-dot"></i> VER RECEPCIÓN EN MAPA
+                    </a>
+                </div>
+
+                <!-- CRONOGRAMA -->
+                <div class="cronograma-wrapper mt-35">
+                    <h2 class="title-serif-large">CRONOGRAMA</h2>
+                    <p class="location-date italic-text mt-5">27 de Diciembre de 2026</p>
+
+                    <div class="mini-timeline mt-20">
+                        <div class="mini-time-item">
+                            <span class="time-badge">09:00 HS</span>
+                            <div class="time-content-info">
+                                <span class="time-desc">Ceremonia Religiosa</span>
+                                <small>Parroquia San Miguel Arcángel</small>
+                            </div>
+                        </div>
+                        <div class="mini-time-item">
+                            <span class="time-badge">11:00 HS</span>
+                            <div class="time-content-info">
+                                <span class="time-desc">Recepción</span>
+                                <small>Kabaña Venamore - La Paloma</small>
+                            </div>
+                        </div>
+                        <div class="mini-time-item">
+                            <span class="time-badge">12:00 HS</span>
+                            <div class="time-content-info"><span class="time-desc">Ceremonia Civil</span></div>
+                        </div>
+                        <div class="mini-time-item">
+                            <span class="time-badge">12:30 HS</span>
+                            <div class="time-content-info"><span class="time-desc">Brindis</span></div>
+                        </div>
+                        <div class="mini-time-item">
+                            <span class="time-badge">13:00 HS</span>
+                            <div class="time-content-info"><span class="time-desc">Primer baile de los novios</span></div>
+                        </div>
+                        <div class="mini-time-item">
+                            <span class="time-badge">14:00 HS</span>
+                            <div class="time-content-info"><span class="time-desc">Almuerzo</span></div>
+                        </div>
+                        <div class="mini-time-item">
+                            <span class="time-badge">16:00 HS</span>
+                            <div class="time-content-info"><span class="time-desc">Hora de la fiesta</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DRESS CODE -->
+            <section class="section-pad reveal text-center">
+                <h2 class="title-serif-large">DRESS CODE</h2>
+                <p class="wedding-message-text italic-text mt-10">Código de vestimenta</p>
+                <div class="dress-code-box mt-20">
+                    <p class="dress-badge">ELEGANTE</p>
+                    <p class="dress-rule mt-10" style="font-size: 0.95rem; color: var(--green-dark);">Se ruega evitar el color <strong>blanco y celeste</strong>.</p>
+                </div>
+            </section>
+
+            <!-- SUGERENCIA DE REGALO -->
+            <section class="section-pad reveal text-center section-bg-cream">
+                <div class="regalo-box-outline">
+                    <div class="regalo-tab-top">DETALLE CON AMOR</div>
+                    <h2 class="title-serif-large mt-20">SUGERENCIA DE<br>REGALO</h2>
+                    <p class="wedding-message-text italic-text mt-15 mb-20 px-10">
+                        Lo más importante para nosotros es compartir este día con ustedes. Si deseas hacernos un presente:
+                    </p>
+                    
+                    <div class="bank-info-card text-center">
+                        <p class="bank-name">BANCO NACIONAL DE FOMENTO</p>
+                        <p class="bank-titular mt-5">Titular: Lorena Calderón</p>
+                        <p class="bank-cuenta mt-5">Caja de Ahorro: <strong>000-15-6509741</strong></p>
+                        <div class="alias-box-inline mt-15">
+                            <span>Alias: <strong>4558716</strong></span>
+                            <button class="btn-copy-green" onclick="copiarAlias('4558716')">
+                                <i class="fa-solid fa-copy"></i> COPIAR ALIAS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ÁLBUM COLECTIVO -->
+            <section class="section-pad reveal text-center">
+                <div class="icon-circle-head mt-10"><i class="fa-solid fa-camera-retro"></i></div>
+                <h2 class="title-serif-large mt-15">ÁLBUM COLECTIVO</h2>
+                <p class="wedding-message-text italic-text mt-10">Comparte tus recuerdos</p>
+                
+                <p class="wedding-message-text mt-15 px-10" style="font-size: 1rem;">
+                    Ayúdanos a capturar los mejores momentos de nuestra boda. Sube tus fotos y videos a nuestra carpeta compartida.
+                </p>
+
+                <a href="https://drive.google.com/drive/folders/1X0T7PDZPNcDmOUcl0EICQdxudNWHv_0W?usp=sharing" class="btn-block-green mt-20" target="_blank">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> SUBIR FOTOS Y VIDEOS
+                </a>
+            </section>
+
+            <!-- RSVP -->
+            <section class="section-pad reveal text-center section-bg-cream">
+                <h2 class="title-serif-large">RSVP</h2>
+                <p class="wedding-message-text mt-15">
+                    Por favor, confirmá tu asistencia antes del:
+                </p>
+                <p class="rsvp-date-big mt-5">
+                    15 de Diciembre de 2026
+                </p>
+
+                <a href="https://wa.me/595987617795?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Javier%20y%20Lorena%20💍" class="btn-block-green mt-25" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> CONFIRMAR ASISTENCIA
+                </a>
+            </section>
+
+            <!-- FOOTER CIERRE -->
+            <section class="section-pad reveal text-center footer-end-section">
+                <p class="footer-small-caps mt-20">CON PROFUNDO AMOR</p>
+                <h2 class="footer-esperamos mt-10">¡Les esperamos!</h2>
+                <p class="footer-small-italic mt-10">con cariño</p>
+                <h2 class="names-script-medium mt-10">Javier & Lorena <i class="fa-solid fa-heart" style="font-size: 0.5rem; color: var(--green-button);"></i></h2>
+                
+                <div class="footer-date-line mt-20">
+                    <div class="line-side"></div>
+                    <p>27 · 12 · 2026</p>
+                    <div class="line-side"></div>
+                </div>
+
+                <p class="credits-text mt-30"><i class="fa-solid fa-gem"></i> GHISA DIGITAL · DESIGN STUDIO</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
