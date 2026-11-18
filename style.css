@@ -264,3 +264,35 @@ body {
   color: var(--pastel-green);
   text-transform: uppercase;
 }
+
+/* ESTILOS PARA EL LOGO J&L */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.logo-img {
+  max-width: 130px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* NOMBRES COMPLETOS EN EL FOOTER (LEGIBLES Y ORDENADOS) */
+.names-full-clean {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--green-dark);
+  letter-spacing: 1px;
+}
+
+.names-full-clean .ampersand {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--pastel-green);
+  margin: 0 4px;
+}
