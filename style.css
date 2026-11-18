@@ -265,34 +265,43 @@ body {
   text-transform: uppercase;
 }
 
-/* ESTILOS PARA EL LOGO J&L */
+/* LOGO CON FONDO TRANSPARENTE / SIN CUADRADO BLANCO */
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 0;
 }
 
-.logo-img {
-  max-width: 130px;
+.logo-img-transparent {
+  max-width: 120px;
   width: 100%;
   height: auto;
   display: block;
+  mix-blend-mode: multiply; /* Elimina automáticamente el fondo blanco de la imagen */
+  opacity: 0.9;
 }
 
-/* NOMBRES COMPLETOS EN EL FOOTER (LEGIBLES Y ORDENADOS) */
-.names-full-clean {
+/* NOMBRES EN 3 LÍNEAS EN EL FOOTER */
+.names-three-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.names-three-lines .nombre-persona {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 500;
   color: var(--green-dark);
   letter-spacing: 1px;
 }
 
-.names-full-clean .ampersand {
+.names-three-lines .simbolo-amp {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 400;
+  font-size: 1.4rem;
   color: var(--pastel-green);
-  margin: 0 4px;
+  line-height: 1;
+  margin: 2px 0;
 }
